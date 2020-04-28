@@ -17,9 +17,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
-# Powerline
-#source /usr/share/powerline/bindings/zsh/powerline.zsh
-
 # zplug init
 source /usr/share/zplug/init.zsh
 
