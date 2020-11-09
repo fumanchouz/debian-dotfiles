@@ -18,7 +18,7 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # zplug init
-source /usr/share/zplug/init.zsh
+source ~/.zplug/init.zsh
 
 # zplug from oh-my-zsh
 zplug 'plugins/debian', from:oh-my-zsh
@@ -26,8 +26,8 @@ zplug 'lib/key-bindings.zsh', from:oh-my-zsh
 
 # zplug plugins
 zplug 'zsh-users/zsh-history-substring-search'
-zplug '/usr/share/zsh-autosuggestions', from:local
-zplug '/usr/share/zsh-syntax-highlighting', from:local, defer:2
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 
 # zplug theme
 zplug 'themes/gentoo', from:oh-my-zsh, as:theme 
