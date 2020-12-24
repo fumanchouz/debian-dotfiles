@@ -1,8 +1,6 @@
 # Debian
 alias 'apt'='sudo apt'
-alias 'su'='sudo su'
 alias 'ls'='ls -a --color'
-alias 'clear'='clear && clear'
 
 # Options
 setopt NO_NOMATCH
@@ -17,25 +15,24 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
-# zplug init
+# Zplug init
 source ~/.zplug/init.zsh
 
-# zplug from oh-my-zsh
-zplug 'plugins/debian', from:oh-my-zsh
+# Settings from oh-my-zsh
 zplug 'lib/key-bindings.zsh', from:oh-my-zsh
 
-# zplug plugins
-zplug 'zsh-users/zsh-history-substring-search'
+# Plugins
 zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-history-substring-search'
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 
-# zplug theme
+# Theme
 zplug 'themes/gentoo', from:oh-my-zsh, as:theme 
 
-# zplug check packages
+# Check packages
 if ! zplug check; then
     zplug install
 fi
 
-# zplug source plugins and add commands to the PATH
+# Source plugins and add commands to the PATH
 zplug load
