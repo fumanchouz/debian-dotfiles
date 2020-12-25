@@ -1,12 +1,12 @@
 #! /bin/bash
 
 OS=debian
-ARCH=amd6
+ARCH=amd64
 DISTRO=sid
 CHROOT=/mnt
 
 for dir in dev sys proc; do
-  if [ -d $CHROOT/$dir ]; then
+  if [ ! -d $CHROOT/$dir ]; then
     mkdir $CHROOT/$dir
   fi
 
