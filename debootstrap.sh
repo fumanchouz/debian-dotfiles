@@ -5,20 +5,18 @@ ARCH=amd6
 DISTRO=sid
 CHROOT=/mnt
 
-if [ -d $CHROOT/{boot,dev,sys} ]
-then
-  mkdir $CHROOT/{boot,dev,sys}
-fi
+for dir in dev sys proc; do
+  if [ -d $CHROOT/$dir ]; then
+    mkdir $CHROOT/$dir
+  fi
+
+  mount -o bind $dir $CHROOT/$dir
+done
 
 debootstrap                      \
   --include=sudo,vim,zsh         \
   --arch $ARCH                   \
   $DISTRO $CHROOT                \
   http://mirror.yandex.ru/$OS
-
-for dir in dev sys proc
-do
-  mount -o bind $dir $CHROOT/$dir
-done
 
 chroot $CHROOT
